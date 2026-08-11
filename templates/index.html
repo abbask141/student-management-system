@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard - Student Management System
+{% endblock %}
+
+{% block content %}
+
+<h1>Student Management System</h1>
+
+<p class="dashboard-welcome">
+    Welcome to the Student Management System
+</p>
+<div class="dashboard">
+
+    <div class="dashboard-card">
+
+        <h2>Total Students</h2>
+
+        <p class="dashboard-number">
+            {{ total_students }}
+        </p>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h2>Departments</h2>
+
+        <p class="dashboard-number">
+            {{ total_departments }}
+        </p>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h2>Average Age</h2>
+
+        <p class="dashboard-number">
+            {{ "%.1f"|format(average_age or 0) }}
+        </p>
+
+    </div>
+
+</div>
+
+<div class="department-section">
+
+    <h2>Department Statistics</h2>
+
+    <table class="department-table">
+
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Number of Students</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for department in department_stats %}
+
+            <tr>
+
+                <td>
+                    {{ department.department }}
+                </td>
+
+                <td>
+                    {{ department.student_count }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<div class="dashboard-links">
+
+    <a href="/students" class="dashboard-btn">
+        View Students
+    </a>
+
+</div>
+
+<div class="chart-container">
+
+    <h2>Students by Department</h2>
+
+    <canvas id="departmentChart"></canvas>
+
+</div>
+
+<script>
+
+    const departments = [
+        {% for department in department_stats %}
+            "{{ department.department }}",
+        {% endfor %}
+    ];
+
+    const studentCounts = [
+        {% for department in department_stats %}
+            {{ department.student_count }},
+        {% endfor %}
+    ];
+
+    const ctx = document.getElementById("departmentChart");
+
+    new Chart(ctx, {
+
+        type: "bar",
+
+        data: {
+
+            labels: departments,
+
+            datasets: [{
+                label: "Number of Students",
+                data: studentCounts
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            plugins: {
+                legend: {
+                    display: true
+                }
+            }
+
+        }
+
+    });
+
+</script>
+
+{% endblock %}

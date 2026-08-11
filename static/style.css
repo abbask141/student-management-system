@@ -1,0 +1,457 @@
+body {
+    background-color: #f4f6f8;
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+
+h1 {
+    color: #1f3c88;
+}
+
+h2 {
+    color: #444;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+}
+
+a {
+    color: white;
+    background-color: #1f3c88;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.student-form {
+    background-color: white;
+    padding: 25px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.student-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    background-color: #1f3c88;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.student-table th {
+    background-color: #234494;
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.student-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.student-table tr:hover {
+    background-color: #f5f7ff;
+}
+
+/*.... Edit button....... */
+
+.edit-btn {
+    display: inline-block;
+    background-color: #234494;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.edit-btn:hover {
+    background-color: #172f6b;
+}
+.edit_student{
+    background-color: white;
+    padding: 25px;
+    width: 400px;
+    border-radius: 10px;
+}
+.edit_student input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.update_btn{
+    background-color: #1f3c88;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-btn,
+.delete-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #24479b;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.edit-btn:hover {
+    background-color: #183678;
+}
+
+.delete-btn:hover {
+    background-color: #b02a37;
+}
+.flash-message {
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.flash-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+/*........ Search.......... */
+
+.search-container {
+    margin: 20px 0;
+}
+
+.search-container form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: #234494;
+}
+
+.search-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #234494;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.search-btn:hover {
+    background-color: #172f6b;
+}
+.clear-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.clear-btn:hover {
+    background-color: #545b62;
+}
+
+/*.......DASHBOARD......... */
+
+.dashboard {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    flex: 1;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.dashboard-card h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.dashboard-number {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.dashboard-links {
+    margin-top: 30px;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #234494;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.dashboard-btn:hover {
+    background-color: #172f6b;
+}
+
+/* ...............RESPONSIVE DESIGN....... */
+
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .dashboard-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .search-container form {
+        flex-direction: column;
+    }
+
+    .search-container input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .search-btn,
+    .clear-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+}
+
+/*.......... DEPARTMENT STATISTICS. ........*/
+
+
+.department-section {
+    margin-top: 40px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.department-section h2 {
+    margin-bottom: 20px;
+}
+
+.department-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.department-table th,
+.department-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.department-table th {
+    font-weight: bold;
+}
+/* Navbar */
+
+.navbar {
+    background-color: #244a94;
+    padding: 14px 0;
+    margin-bottom: 35px;
+}
+
+.nav-container {
+    width: 92%;
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    background-color: #193b7a;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination a:hover {
+    opacity: 0.8;
+}
+
+.pagination span {
+    font-weight: bold;
+}
+.nav-welcome {
+    color: white;
+    font-weight: 600;
+    padding: 10px 16px;
+    font-size: 16px;
+}
+
+.logout-btn {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+}
+
+.logout-btn:hover {
+    opacity: 0.85;
+}
+.chart-container {
+    background: white;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    height: 450px;
+}
+
+.chart-container h2 {
+    margin-bottom: 20px;
+}
+.dashboard-welcome {
+    color: #555;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0 35px 20px;
+}
+.error-page {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.error-page h1 {
+    font-size: 100px;
+    margin: 0;
+    color: #244a94;
+}
+
+.error-page h2 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.error-page p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    background-color: #244a94;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+}
+
+.dashboard-btn:hover {
+    background-color: #193b7a;
+}
