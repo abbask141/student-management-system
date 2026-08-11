@@ -1,24 +1,4 @@
-Perfect. ✅
 
-Now your database password is separated from the application, which is much better for submission.
-
-### Next: create the README
-
-In your project folder:
-
-```text
-D:\student-management-system
-```
-
-create a file called:
-
-```text
-README.md
-```
-
-Put this in it:
-
-````markdown
 # Student Management System
 
 A web-based Student Management System developed using Flask and MySQL.
@@ -54,7 +34,6 @@ A web-based Student Management System developed using Flask and MySQL.
 
 ## Project Structure
 
-```text
 student-management-system/
 │
 ├── app.py
@@ -77,8 +56,6 @@ student-management-system/
 │
 └── static/
     └── style.css
-````
-
 ## Installation
 
 ### 1. Create a virtual environment
@@ -104,10 +81,7 @@ pip install -r requirements.txt
 ### 4. Configure MySQL
 
 Create/import the database using:
-
-```text
 database.sql
-```
 
 Then create a `.env` file and add your MySQL credentials:
 
@@ -144,33 +118,4 @@ The database structure and sample data are provided in:
 database.sql
 ```
 
-````
-
-### ⚠️ One important correction
-
-Your final submission **must NOT contain `.env`** because it contains your real MySQL password.
-
-Your project folder for submission should be:
-
-```text
-student-management-system/
-├── app.py
-├── database.py
-├── requirements.txt
-├── database.sql
-├── README.md
-├── .gitignore
-├── templates/
-└── static/
-````
-
-**Do not include:**
-
-```text
-.env
-venv/
-__pycache__/
-```
-
-Keep `.env` on **your computer** so your project continues working.
 
