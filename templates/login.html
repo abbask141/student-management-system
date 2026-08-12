@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Login - Student Management System
+{% endblock %}
+
+{% block content %}
+
+<div class="login-container">
+
+    <h1>Admin Login</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+    <form action="/login" method="POST">
+
+        <label>Username:</label>
+
+        <input
+            type="text"
+            name="username"
+            required
+        >
+        <br><br>
+
+        <label>Password:</label>
+
+        <input
+            type="password"
+            name="password"
+            required
+        >
+        <br><br>
+
+        <button type="submit" class="submit-btn">
+            Login
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

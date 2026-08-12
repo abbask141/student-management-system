@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Student - Student Management System
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Edit Student</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            <div class="flash-message {{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith %}
+
+<form action="/edit/{{ student.id }}" method="POST" class="student-form">
+
+    <label>Name:</label>
+
+    <input
+        type="text"
+        name="name"
+        value="{{ student.name }}"
+        required
+    >
+    <br><br>
+
+
+    <label>Email:</label>
+
+    <input
+        type="email"
+        name="email"
+        value="{{ student.email }}"
+        required
+    >
+
+<br><br>
+    <label>Age:</label>
+
+    <input
+        type="number"
+        name="age"
+        value="{{ student.age }}"
+        required
+    >
+    <br><br>
+
+    <label>Department:</label>
+
+    <input
+        type="text"
+        name="department"
+        value="{{ student.department }}"
+        required
+    >
+    <br><br>
+
+    <button class="submit-btn" type="submit">
+        Update Student
+    </button>
+
+</form>
+
+{% endblock %}
