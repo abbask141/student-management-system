@@ -1,9 +1,15 @@
 from flask import Flask, render_template, request, redirect, flash, session
+import os
 import re
+from dotenv import load_dotenv
 from database import get_db_connection
+from psycopg2.extras import RealDictCursor
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "student-management-secret"
+
+app.secret_key = os.getenv("SECRET_KEY")
 def is_valid_email(email):
 
     pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
@@ -18,7 +24,7 @@ def home():
         return redirect("/login")
 
     connection = get_db_connection()
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
 
     # Total students
     cursor.execute("SELECT COUNT(*) AS total_students FROM students")
@@ -59,7 +65,7 @@ def students():
       return redirect("/login")
 
     connection = get_db_connection()
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
 
     # Search
     search = request.args.get("search", "")
@@ -76,7 +82,7 @@ def students():
         count_query = """
             SELECT COUNT(*) AS total
             FROM students
-            WHERE NAME LIKE %s
+            WHERE name ILIKE %s
         """
 
         cursor.execute(count_query, ("%" + search + "%",))
@@ -98,12 +104,12 @@ def students():
         query = """
             SELECT
                 id,
-                NAME AS name,
+                name,
                 email,
                 age,
                 department
             FROM students
-            WHERE NAME LIKE %s
+            WHERE name ILIKE %s
             LIMIT %s OFFSET %s
         """
 
@@ -117,7 +123,7 @@ def students():
         query = """
             SELECT
                 id,
-                NAME AS name,
+                name,
                 email,
                 age,
                 department
@@ -230,7 +236,7 @@ def edit_student(id):
          return redirect("/login")
 
     connection = get_db_connection()
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
 
     if request.method == "POST":
 
@@ -295,7 +301,7 @@ def edit_student(id):
     query = """
         SELECT
             id,
-            NAME AS name,
+            name,
             email,
             age,
             department
