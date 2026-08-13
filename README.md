@@ -4,7 +4,7 @@ A web-based Student Management System built with **Python Flask** and **PostgreS
 
 ## 🌐 Live Website
 
-[Open Student Management System](https://student-management-system-frwh-bqc0irloa-abbas1-d8c4.vercel.app)
+[Open Student Management System](https://student-management-system-zeta-vert.vercel.app)
 
 ## 📌 Project Overview
 
